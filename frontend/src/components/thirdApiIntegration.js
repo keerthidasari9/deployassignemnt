@@ -1,38 +1,29 @@
 import React, {Component} from 'react';
-
+import axios from 'axios';
+const options = {
+    method: 'GET',
+    url: 'https://extract-news.p.rapidapi.com/v0/article',
+    params: {
+      url: 'https://www.theverge.com/2020/4/17/21224728/bill-gates-coronavirus-lies-5g-covid-19'
+    },
+    headers: {
+      'X-RapidAPI-Key': 'af2d38542fmshe707bf64f0aa221p1b4cbcjsnd7eb98f2f093',
+      'X-RapidAPI-Host': 'extract-news.p.rapidapi.com'
+    }
+  };
+  
 class ThirdApiIntegration extends Component{
-    constructor(){
-        super();
-        this.state = {
-            person: []
-        };
-    }
-
-    componentDidMount() {
-        // fetch('https://randomuser.me/api/?results=500')
-        //     .then(res => {
-        //         res.json();
-        //     })
-        //     .then(data => {
-        //         console.log(`${data}`)
-        //         this.setState({
-        //             person: data.results
-        //         })
-        //     })
-    }
+    
+    
     render() {
+        axios.request(options).then(function (response) {
+            console.log(response.data);
+        }).catch(function (error) {
+            console.error(error);
+        });
         return(
-            <>
-                <h1 id="thirdTitle">Topic News</h1>
-                {
-                    // this.state.person.map((personRecord) => {
-                    //     <div key={personRecord.id.value}>
-                    //         {personRecord.name.first}
-                    //     </div>
-                    // })
-                }
-            </>
-        )
+            <h1>API</h1>
+        );
     }
 }
 
