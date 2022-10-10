@@ -39,7 +39,7 @@ const Contents = props => {
                     </div>
                     <div className="col-lg-6 col-md-5">
                         <div>
-                            <Formik 
+                            {/* <Formik 
                                 initialValues={initialValues}
                                 onSubmit={onSubmit}
                                 render={
@@ -79,7 +79,9 @@ const Contents = props => {
                                         </Form>
                                     )
                                 }
-                                ></Formik>
+                                ></Formik> */}
+                                <h1> keerthi</h1>
+                                <p>I am a computer science student.</p>
                         </div>
                     </div>
                 </div>
